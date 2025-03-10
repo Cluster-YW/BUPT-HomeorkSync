@@ -26,6 +26,7 @@ def sync_homework():
     if client_secret is None:
         client_secret = input("请输入TickTick的client_secret: ")
         config.set('TickTick', 'client_secret', client_secret)
+        client_secret = config.get('TickTick', 'client_secret', fallback=None)
     if config.get("TickTick","host",fallback=None) is None:
         config.set('TickTick', 'host', input("请输入TickTick的重定向主机地址: "))
     if config.get("TickTick","port",fallback=None) is None:
